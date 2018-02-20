@@ -27,4 +27,3 @@ class wcApp:
     def update_business(self):
 #deletes business
     def delete_business(self):
-#search for a business
