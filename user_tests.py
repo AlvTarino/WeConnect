@@ -2,6 +2,7 @@ import unittest
 import sys
 from .wcUser import wcUser
 
+
 class BusinessTestCase(unittest.TestCase):
     def setUp(self):
         self.user = wcUser()
