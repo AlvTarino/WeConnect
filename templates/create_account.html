@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WeConnect SignUp</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  </head>
+  <body>
+  <header>
+    <h1>WeConnect</h1>
+ </header>
+    <div id="home-header">
+      <form method="post" action="{{ url_for('login') }}">
+        <fieldset>
+          <legend>SignUp</legend>
+          <!--<div class="labels">-->
+            <label for="fname">Name</label>
+            <input type="text" id="fname" placeholder="NAME" >
+            <br><br>
+
+            <label for="form-email">Email Address</label>
+            <input type="email" id="form-email" placeholder="E-mail">
+            <br><br>
+
+            <label for="form-pass">Password</label>
+            <input type="password" id="form-pass" placeholder="Password">
+            <br><br>
+
+            <input type="submit" name="" value="Signup">
+          <!--</div>-->
+        </fieldset>
+      </form>
+    </div>
+      <footer>
+        <p>&copy; 2018 - Alvin Taremwa</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WeConnect Login</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  </head>
+  <body>
+  <header>
+    <h1>WeConnect</h1>
+ </header>
+    <div id="home-header">
+      <form method="post" action="{{ url_for('login') }}">
+        <fieldset>
+          <legend>Login</legend>
+            <div class="labal">
+              <label for="form-email">Email Address</label>
+              <input type="email" id="form-email" required>
+              <br><br>
+
+              <label for="form-pass">Password</label>
+              <input type="password" id="form-pass" required>
+              <br><br>
+
+              <input type="submit" name="" value="Login">
+            </div>
+            <br>
+            <div>
+              Dont have an account? <a href="{{ url_for('register') }}"> Sign up</a>
+            </div>
+        </fieldset>
+      </form>
+    </div>
+      <footer>
+        <p>&copy; 2018 - Alvin Taremwa</p>
+    </div>
+  </body>
+</html>
