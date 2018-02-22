@@ -1,0 +1,41 @@
+<!--<div class = "new">
+  <head>
+    <title>WeConnect Home</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  </head>
+  <body>
+
+    <div id="home_page">
+      <header>
+        <h1>WeConnect</h1>
+          <nav id="headings">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="register.html">Register</a></li>
+              <li><a href="search_business.html">Search Directory</a></li>
+              <li><a href="login.html">LogOut</a></li>
+            </ul>
+          </nav>
+      </header>-->
+{%extends base.html%}
+{%block content%}
+      <div>
+        <h3> Welcome to WeConnect</h3>
+          <p>WeConnect provides a platform that brings businesses and individuals together. This platform
+creates awareness for businesses and gives the users the ability to write reviews about the
+businesses they have interacted with.</p>
+            <br>
+<p>Take a look at our Sample Business Ideas</p>
+<p>Social Saloon</p><button a href="{{url_for('read_review')}}">Read review</button>
+<p>Fin-tech</p><button a href="{{url_for('read_review')}}">Read review</button>
+<p>Safe boda</p><button a href="{{url_for('read_review')}}">Read review</button>
+<p>Yoga Yoga East Africa</p><button a href="{{url_for('read_review')}}">Read review</button>
+
+      </div>
+    </div>
+      <footer>
+        <p>&copy; 2018 - Alvin Taremwa</p>
+      </footer>
+    </body>
+</div>
+{%endblock}

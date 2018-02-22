@@ -10,14 +10,18 @@
         <h1>WeConnect</h1>
           <nav id="headings">
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="register.html">Register</a></li>
-              <li><a href="search_business.html">Search Directory</a></li>
-              <li><a href="login.html">LogOut</a></li>
+              <li><a href="{{url_for('base')}}">Home</a></li>
+              <li><a href="{{url_for('signup')}}">Register</a></li>
+              <li><a href="{{url_for('search_a_business')}}">Search Directory</a></li>
+              <li><a href="{{url_for('logout')}}">LogOut</a></li>
             </ul>
           </nav>
       </header>
-    </div>  
+    </div>
+    <div>
+      {%block content%}
+      {%endblock%}
+    </div>
       <footer>
         <p>&copy; 2018 - Alvin Taremwa</p>
       </footer>
