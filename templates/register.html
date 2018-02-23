@@ -2,22 +2,34 @@
 <html>
   <head>
     <title>WeConnect Register-Business</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link href="../static/css/styles.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <div id="home_page">
+    <!--<div id="home-header">--->
       <header>
         <h1>WeConnect</h1>
           <nav id="headings">
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="register.html">Register</a></li>
-              <li><a href="search_business.html">Search Directory</a></li>
-              <li><a href="login.html">LogOut</a></li>
+              <li><a href="{{url_for('base')}}">Home</a></li>
+              <li><a href="{{url_for('add_a_business_idea')}}">Register Your Business</a></li>
+              <li><a href="{{url_for('search_a_business')}}">Search Directory</a></li>
+              <li><a href="{{url_for('logout')}}">LogOut</a></li>
             </ul>
           </nav>
-      </header>
-    </div>
+        </header>
+        <div id="home-header">
+          <form method="post" action="">
+            <fieldset>
+              <legend>Register Your Business Here</legend>
+              <label for="businessname">Enter business name</label>
+              <input type="text" name='business_name' placeholder="Enter business name"/>
+              <label for="business_idea">Business Description</label>
+              <textarea type="textarea" name='description' placeholder="Enter business description"/></textarea>
+              <input id="btn" type="submit" value="Register Business Idea"/>
+            </fieldset>
+          </form>
+        </div>
+    <!--</div>-->
       <footer>
         <p>&copy; 2018 - Alvin Taremwa</p>
       </footer>

@@ -2,27 +2,27 @@
 <html>
   <head>
     <title>WeConnect SignUp</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link href="../static/css/styles.css" rel="stylesheet" type="text/css" >
   </head>
   <body>
   <header>
     <h1>WeConnect</h1>
  </header>
     <div id="home-header">
-      <form>
+      <form method="POST" action="/signup">
         <fieldset>
           <legend>SignUp</legend>
           <!--<div class="labels">-->
             <label for="fname">Name</label>
-            <input type="text" id="fname" required>
+            <input type="text" id="fname" placeholder="NAME" >
             <br><br>
 
             <label for="form-email">Email Address</label>
-            <input type="email" id="form-email" required>
+            <input type="email" id="form-email" placeholder="E-mail" required>
             <br><br>
 
             <label for="form-pass">Password</label>
-            <input type="password" id="form-pass" required>
+            <input type="password" id="form-pass" placeholder="Password" required>
             <br><br>
 
             <input type="submit" name="" value="Signup">

@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>WeConnect Read reviews</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link href="../static/css/styles.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <div id="home_page">
@@ -10,10 +10,10 @@
         <h1>WeConnect</h1>
           <nav id="headings">
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="register.html">Register</a></li>
-              <li><a href="search_business.html">Search Directory</a></li>
-              <li><a href="login.html">LogOut</a></li>
+              <li><a href="{{url_for('base')}}">Home</a></li>
+              <li><a href="{{url_for('add_a_business_idea')}}">Register Your Business</a></li>
+              <li><a href="{{url_for('search_a_business')}}">Search Directory</a></li>
+              <li><a href="{{url_for('logout')}}">LogOut</a></li>
             </ul>
           </nav>
       </header>
