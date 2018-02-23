@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/AlvTarino/WeConnect.svg?branch=dev_branch)] (https://travis-ci.org/AlvTarino/WeConnect/builds/345076190)
+
 
 
 ## WeConnect app README
