@@ -1,6 +1,6 @@
 import unittest
 import sys
-from .wcUser import wcUser
+from models.wcUser import wcUser
 
 
 class BusinessTestCase(unittest.TestCase):
