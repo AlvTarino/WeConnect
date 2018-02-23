@@ -2,21 +2,31 @@
 <html>
   <head>
     <title>WeConnect Update Business</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link href="../static/css/styles.css" rel="stylesheet" type="text/css" >
   </head>
   <body>
-    <div id="home_page">
+    <div id="home_header">
       <header>
         <h1>WeConnect</h1>
           <nav id="headings">
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="register.html">Register</a></li>
-              <li><a href="search_business.html">Search Directory</a></li>
-              <li><a href="login.html">LogOut</a></li>
+              <li><a href="{{url_for('base')}}">Home</a></li>
+              <li><a href="{{url_for('add_a_business_idea')}}">Register Your Business</a></li>
+              <li><a href="{{url_for('search_a_business')}}">Search Directory</a></li>
+              <li><a href="{{url_for('logout')}}">LogOut</a></li>
             </ul>
           </nav>
       </header>
+      <form method="post" action="">
+        <fieldset>
+          <legend>Update Your Business Name/Title Here</legend>
+          <label for="businessname">Old Business name</label>
+          <input type="text" name='business_name' placeholder="Old business name" value="{{business_name}}" readonly="readonly"/>
+          <label for="business_idea">New Business Name</label>
+          <input type="text" name='new_name' placeholder="Enter business name"/>
+          <input id="btn" type="submit" value="Update Business name"/>
+        </fieldset>
+      </form>
     </div>
       <footer>
         <p>&copy; 2018 - Alvin Taremwa</p>

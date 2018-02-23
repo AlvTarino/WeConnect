@@ -36,7 +36,7 @@ def base():
     return render_template('base.html', descriptions=descriptions)
 
 #Route to enable user signup
-@app.route('/')
+#@app.route('/')
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     error = None
@@ -51,7 +51,7 @@ def signup():
     return render_template('create_account.html', error=error)
 
 #Route enables user to login after registration
-#@app.route('/')
+@app.route('/')
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
@@ -70,7 +70,7 @@ def add_a_business_idea():
     error = None
     if request.method == 'POST':
         business_name = request.form['business_name']
-        items = request.form['business_description']
+        business_description = request.form['business_description']
         flash("You have successfully added registered {} {}".format(business_name, business_description))
         if business_name and business_description:
             user.create_business(business_name, business_description)
@@ -98,7 +98,21 @@ def logout():
     flash('You Were Logged Out !')
     return redirect(url_for('login'))
 
-    #Route enables user to delete business
+@app.route('/description/<business_name>')
+@login_required
+def description(business_name):
+    business_description = user.read_business(business_name)
+    return render_template('read_review.html', business_description=business_description, business_name=business_name)
+
+#Route enables user to delete business description
+@app.route('/delete/<business_name>/<description>')
+@login_required
+def delete(business_name, description):
+    user.delete_business_description(business_name, description)
+    return redirect(url_for('description', business_name=business_name))
+    return render_template('view_business.html')
+
+#Route enables user to delete business
 @app.route('/delete_business/<business_name>')
 @login_required
 def delete_business(business_name):
@@ -106,6 +120,34 @@ def delete_business(business_name):
     return redirect(url_for('base'))
     return render_template('base.html')
 
+#Route enables user to edit business
+@app.route('/update_a_business/<business_name>', methods=['GET', 'POST'])
+@login_required
+def update_a_business(business_name):
+    error = None
+    if request.method == 'POST':
+        business_name = request.form['business_name']
+        new_name = request.form['new_name']
+        flash("You have succesfully added registered {} {}".format(business_name, new_name))
+        if business_name and new_name:
+            user.update_business(business_name, new_name)
+            return redirect(url_for('base',business_name=business_name))
+    return render_template('update_business.html',business_name=business_name)
+
+#Route enables user to edit business_description
+@app.route('/update_a_business_description/<business_name>/<description>', methods=['GET', 'POST'])
+@login_required
+def update_a_business_description(business_name, description):
+    error = None
+    if request.method == 'POST':
+        business_name = request.form['business_name']
+        description = request.form['description']
+        new_name = request.form['new_description']
+        flash("You have succesfully added registered {} {} {}".format(business_name, description, new_name))
+        if business_name and description:
+            user.update_business_description(business_name, description, new_name)
+            return redirect(url_for('description', business_name=business_name, description=description))
+    return render_template('view_business.html', business_name=business_name, description=description)
 
 if __name__=='__main__':
     app.run(debug=True)
